@@ -1,0 +1,117 @@
+/*
+SQLyog Ultimate v8.82 
+MySQL - 5.1.50-community : Database - lab
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`lab` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `lab`;
+
+/*Table structure for table `dept` */
+
+DROP TABLE IF EXISTS `dept`;
+
+CREATE TABLE `dept` (
+  `deptcode` varchar(10) DEFAULT NULL,
+  `deptname` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `dept` */
+
+insert  into `dept`(`deptcode`,`deptname`) values ('101','CSED');
+
+/*Table structure for table `lab` */
+
+DROP TABLE IF EXISTS `lab`;
+
+CREATE TABLE `lab` (
+  `labname` varchar(20) DEFAULT NULL,
+  `pcno` varchar(10) DEFAULT NULL,
+  `os` varchar(15) DEFAULT NULL,
+  `rem` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `lab` */
+
+insert  into `lab`(`labname`,`pcno`,`os`,`rem`) values ('CSED','1','Windows 10','good Enough');
+
+/*Table structure for table `login` */
+
+DROP TABLE IF EXISTS `login`;
+
+CREATE TABLE `login` (
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `login` */
+
+insert  into `login`(`username`,`password`) values ('inshaal','8962');
+
+/*Table structure for table `marks` */
+
+DROP TABLE IF EXISTS `marks`;
+
+CREATE TABLE `marks` (
+  `regno` varchar(10) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `dept` varchar(10) DEFAULT NULL,
+  `sem` varchar(10) DEFAULT NULL,
+  `subcode` varchar(10) DEFAULT NULL,
+  `intob` int(5) DEFAULT '0',
+  `inttot` int(5) DEFAULT '20',
+  `extob` int(5) DEFAULT '0',
+  `exttot` int(5) DEFAULT '20'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `marks` */
+
+insert  into `marks`(`regno`,`name`,`dept`,`sem`,`subcode`,`intob`,`inttot`,`extob`,`exttot`) values ('110111','Karuna','CSED','1','BCA101',10,20,15,20);
+
+/*Table structure for table `staff` */
+
+DROP TABLE IF EXISTS `staff`;
+
+CREATE TABLE `staff` (
+  `name` varchar(20) DEFAULT NULL,
+  `mob` varchar(15) DEFAULT NULL,
+  `email` varchar(25) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `city` varchar(15) DEFAULT NULL,
+  `state` varchar(20) DEFAULT NULL,
+  `country` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `staff` */
+
+insert  into `staff`(`name`,`mob`,`email`,`gender`,`city`,`state`,`country`) values ('Karuna','9988008978','karuna@gmail.com','Male','Lucknow','UP','India');
+
+/*Table structure for table `stucheck` */
+
+DROP TABLE IF EXISTS `stucheck`;
+
+CREATE TABLE `stucheck` (
+  `regno` varchar(10) DEFAULT NULL,
+  `labname` varchar(20) DEFAULT NULL,
+  `pcno` varchar(10) DEFAULT NULL,
+  `date` varchar(15) DEFAULT NULL,
+  `time` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `stucheck` */
+
+insert  into `stucheck`(`regno`,`labname`,`pcno`,`date`,`time`) values ('110111','CSED','1','8-10-2018','5:41:49'),('1011223','CSED','1','9-10-2018','0:24:47');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
